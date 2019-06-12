@@ -18,18 +18,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XMK-CR-gsq" userLabel="SubjectLabel">
-                                <rect key="frame" x="50" y="156" width="314" height="48"/>
-                                <color key="backgroundColor" red="0.37647058820000001" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JOn-Z7-cfr" userLabel="DescriptionLabel">
+                                <rect key="frame" x="7" y="298" width="400" height="300"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="frP-mM-sh2"/>
+                                    <constraint firstAttribute="width" constant="400" id="p8f-wO-Xni"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JOn-Z7-cfr" userLabel="DescriptionLabel">
-                                <rect key="frame" x="55" y="259" width="309" height="436"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XMK-CR-gsq" userLabel="SubjectLabel">
+                                <rect key="frame" x="7" y="168" width="400" height="50"/>
+                                <color key="backgroundColor" red="0.37647058820000001" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="436" id="DdV-BO-ylm"/>
+                                    <constraint firstAttribute="width" constant="400" id="a7w-hQ-6hR"/>
+                                    <constraint firstAttribute="height" constant="50" id="e9i-zV-S2A"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -38,12 +43,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="x8l-s3-z3E" firstAttribute="trailing" secondItem="JOn-Z7-cfr" secondAttribute="trailing" constant="50" id="0Cu-Dy-ons"/>
-                            <constraint firstItem="JOn-Z7-cfr" firstAttribute="width" secondItem="tXZ-nC-iQQ" secondAttribute="height" multiplier="309:896" id="Fi8-x5-bak"/>
-                            <constraint firstItem="JOn-Z7-cfr" firstAttribute="leading" secondItem="x8l-s3-z3E" secondAttribute="leading" constant="55" id="LOb-nn-Lsk"/>
-                            <constraint firstItem="JOn-Z7-cfr" firstAttribute="top" secondItem="XMK-CR-gsq" secondAttribute="bottom" constant="55" id="SeM-bZ-Zvb"/>
-                            <constraint firstItem="XMK-CR-gsq" firstAttribute="leading" secondItem="JOn-Z7-cfr" secondAttribute="leading" constant="-5" id="UEM-AW-md7"/>
-                            <constraint firstItem="x8l-s3-z3E" firstAttribute="bottom" secondItem="JOn-Z7-cfr" secondAttribute="bottom" constant="167" id="rJZ-m2-qzd"/>
+                            <constraint firstItem="XMK-CR-gsq" firstAttribute="centerX" secondItem="tXZ-nC-iQQ" secondAttribute="centerX" id="1la-Ug-JLo"/>
+                            <constraint firstItem="JOn-Z7-cfr" firstAttribute="centerY" secondItem="tXZ-nC-iQQ" secondAttribute="centerY" id="kS8-BM-U0m"/>
+                            <constraint firstItem="XMK-CR-gsq" firstAttribute="top" secondItem="x8l-s3-z3E" secondAttribute="top" constant="80" id="nUV-U3-cB7"/>
+                            <constraint firstItem="JOn-Z7-cfr" firstAttribute="centerX" secondItem="tXZ-nC-iQQ" secondAttribute="centerX" id="qCt-ZT-5yu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="x8l-s3-z3E"/>
                     </view>

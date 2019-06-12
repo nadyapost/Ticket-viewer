@@ -8,13 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		13F9E9DA22AFB5A000AFF5A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F9E9D922AFB5A000AFF5A6 /* AppDelegate.swift */; };
-		13F9E9DC22AFB5A000AFF5A6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F9E9DB22AFB5A000AFF5A6 /* ViewController.swift */; };
+		13F9E9DC22AFB5A000AFF5A6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F9E9DB22AFB5A000AFF5A6 /* MainViewController.swift */; };
 		13F9E9DF22AFB5A000AFF5A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13F9E9DD22AFB5A000AFF5A6 /* Main.storyboard */; };
 		13F9E9E122AFB5A100AFF5A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13F9E9E022AFB5A100AFF5A6 /* Assets.xcassets */; };
 		13F9E9E422AFB5A100AFF5A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13F9E9E222AFB5A100AFF5A6 /* LaunchScreen.storyboard */; };
 		13F9E9EF22AFB5A100AFF5A6 /* Ticket_viewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F9E9EE22AFB5A100AFF5A6 /* Ticket_viewerTests.swift */; };
 		13F9E9FA22AFD46E00AFF5A6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F9E9F922AFD46E00AFF5A6 /* DetailViewController.swift */; };
 		13F9E9FC22B0AC9B00AFF5A6 /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F9E9FB22B0AC9B00AFF5A6 /* Ticket.swift */; };
+		13F9E9FE22B116B800AFF5A6 /* ZendeskClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F9E9FD22B116B800AFF5A6 /* ZendeskClient.swift */; };
+		13F9E9FF22B116B800AFF5A6 /* ZendeskClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F9E9FD22B116B800AFF5A6 /* ZendeskClient.swift */; };
+		13F9EA0122B1185D00AFF5A6 /* ZendeskClientTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F9EA0022B1185D00AFF5A6 /* ZendeskClientTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +33,7 @@
 /* Begin PBXFileReference section */
 		13F9E9D622AFB5A000AFF5A6 /* Ticket viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ticket viewer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13F9E9D922AFB5A000AFF5A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		13F9E9DB22AFB5A000AFF5A6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		13F9E9DB22AFB5A000AFF5A6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		13F9E9DE22AFB5A000AFF5A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		13F9E9E022AFB5A100AFF5A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		13F9E9E322AFB5A100AFF5A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -40,6 +43,8 @@
 		13F9E9F022AFB5A100AFF5A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13F9E9F922AFD46E00AFF5A6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		13F9E9FB22B0AC9B00AFF5A6 /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
+		13F9E9FD22B116B800AFF5A6 /* ZendeskClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZendeskClient.swift; sourceTree = "<group>"; };
+		13F9EA0022B1185D00AFF5A6 /* ZendeskClientTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZendeskClientTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,9 +87,10 @@
 			isa = PBXGroup;
 			children = (
 				13F9E9D922AFB5A000AFF5A6 /* AppDelegate.swift */,
-				13F9E9DB22AFB5A000AFF5A6 /* ViewController.swift */,
+				13F9E9DB22AFB5A000AFF5A6 /* MainViewController.swift */,
 				13F9E9F922AFD46E00AFF5A6 /* DetailViewController.swift */,
 				13F9E9FB22B0AC9B00AFF5A6 /* Ticket.swift */,
+				13F9E9FD22B116B800AFF5A6 /* ZendeskClient.swift */,
 				13F9E9DD22AFB5A000AFF5A6 /* Main.storyboard */,
 				13F9E9E022AFB5A100AFF5A6 /* Assets.xcassets */,
 				13F9E9E222AFB5A100AFF5A6 /* LaunchScreen.storyboard */,
@@ -97,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				13F9E9EE22AFB5A100AFF5A6 /* Ticket_viewerTests.swift */,
+				13F9EA0022B1185D00AFF5A6 /* ZendeskClientTest.swift */,
 				13F9E9F022AFB5A100AFF5A6 /* Info.plist */,
 			);
 			path = "Ticket viewerTests";
@@ -204,7 +211,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				13F9E9FA22AFD46E00AFF5A6 /* DetailViewController.swift in Sources */,
-				13F9E9DC22AFB5A000AFF5A6 /* ViewController.swift in Sources */,
+				13F9E9FE22B116B800AFF5A6 /* ZendeskClient.swift in Sources */,
+				13F9E9DC22AFB5A000AFF5A6 /* MainViewController.swift in Sources */,
 				13F9E9DA22AFB5A000AFF5A6 /* AppDelegate.swift in Sources */,
 				13F9E9FC22B0AC9B00AFF5A6 /* Ticket.swift in Sources */,
 			);
@@ -215,6 +223,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				13F9E9EF22AFB5A100AFF5A6 /* Ticket_viewerTests.swift in Sources */,
+				13F9E9FF22B116B800AFF5A6 /* ZendeskClient.swift in Sources */,
+				13F9EA0122B1185D00AFF5A6 /* ZendeskClientTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
