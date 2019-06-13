@@ -20,8 +20,6 @@ class DetailViewController: UIViewController {
   }
   
   func setUI() {
-    subjectLabel.sizeToFit()
-    descriptionLabel.sizeToFit()
     subjectLabel.text = ticket?.subject
     descriptionLabel.text = ticket?.description
     

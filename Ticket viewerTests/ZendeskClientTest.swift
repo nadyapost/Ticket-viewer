@@ -19,15 +19,19 @@ class ZendeskClientTest: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testFetchTickets() {
-      let client = ZendestClient(apiName: "nadyapost", apiKey: "Ne4dvhBqAleizOpjSGkkYqSiuHbUz4hTRQAyEscj", url: " https://nadyapost.zendesk.com")
-      
-      print(client.fetchTickets())
-      
-      
-      
-    }
+    func testDownloadData() {
+            let client = ZendestClient(apiName: "nadyapostr@gmail.com", apiKey: "Ne4dvhBqAleizOpjSGkkYqSiuHbUz4hTRQAyEscj", url: URL(string: "https://nadyapost.zendesk.com/api/v2/tickets.json")!)
 
+    let expectation = XCTestExpectation(description: "Download apple.com home page")
+      client.fetchTickets(success: {() in
+        XCTAssertNotNil(Data(), "No data was downloaded.")
+        expectation.fulfill()
+      }, failure: { (err) in print(err)})
+
+    wait(for: [expectation], timeout: 10.0)
+  }
+  
+  
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {

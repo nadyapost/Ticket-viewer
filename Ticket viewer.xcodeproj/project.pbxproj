@@ -16,7 +16,6 @@
 		13F9E9FA22AFD46E00AFF5A6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F9E9F922AFD46E00AFF5A6 /* DetailViewController.swift */; };
 		13F9E9FC22B0AC9B00AFF5A6 /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F9E9FB22B0AC9B00AFF5A6 /* Ticket.swift */; };
 		13F9E9FE22B116B800AFF5A6 /* ZendeskClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F9E9FD22B116B800AFF5A6 /* ZendeskClient.swift */; };
-		13F9E9FF22B116B800AFF5A6 /* ZendeskClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F9E9FD22B116B800AFF5A6 /* ZendeskClient.swift */; };
 		13F9EA0122B1185D00AFF5A6 /* ZendeskClientTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F9EA0022B1185D00AFF5A6 /* ZendeskClientTest.swift */; };
 /* End PBXBuildFile section */
 
@@ -223,7 +222,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				13F9E9EF22AFB5A100AFF5A6 /* Ticket_viewerTests.swift in Sources */,
-				13F9E9FF22B116B800AFF5A6 /* ZendeskClient.swift in Sources */,
 				13F9EA0122B1185D00AFF5A6 /* ZendeskClientTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

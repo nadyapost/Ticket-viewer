@@ -11,31 +11,20 @@ import UIKit
 class MainViewController: UITableViewController {
   
   var segueIdentifier = "mainToDetail"
-  
+  let client = ZendestClient(apiName: "nadyapostr@gmail.com", apiKey: "Ne4dvhBqAleizOpjSGkkYqSiuHbUz4hTRQAyEscj", url: URL(string: "https://nadyapost.zendesk.com/api/v2/tickets.json")!)
   var ticketsList: [Ticket] = []
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    ticketsList = Ticket.createTicketsArray()
-//    let url = "https://gist.githubusercontent.com/svizzari/c7ffed8e10d3a456b40ac9d18f34289c/raw/325e600e7c8aac3643fc75cb7a4228dfa99eb02e/tickets.json"
-//    let urlOblect = URL(string: url)
-//
-//    URLSession.shared.dataTask(with: urlOblect!) {
-//      (data, response, error) in
-//      do {
-//        let tickets = try JSONDecoder().decode([Ticket].self, from: data!)
-//
-//        for ticket in tickets {
-//          self.tickets.append(ticket)
-//        }
-//
-//      } catch {
-//        print ("There is an error resiving data")
-//      }
-//
-//    }.resume()
+    print("Started view")
     
+    client.fetchTickets(success: {
+      () in self.tableView.reloadData()
+      print("tickets are ready \(self.client.tickets)")
+    }, failure: {(error) in print(error)})
     
+    print("assigned tickets \(client.tickets)")
+    ticketsList = client.tickets
   }
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return ticketsList.count

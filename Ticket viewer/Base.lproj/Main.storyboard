@@ -30,10 +30,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XMK-CR-gsq" userLabel="SubjectLabel">
-                                <rect key="frame" x="7" y="168" width="400" height="50"/>
+                                <rect key="frame" x="207" y="168" width="0.0" height="50"/>
                                 <color key="backgroundColor" red="0.37647058820000001" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="400" id="a7w-hQ-6hR"/>
                                     <constraint firstAttribute="height" constant="50" id="e9i-zV-S2A"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -62,7 +61,7 @@
         <!--All tickets-->
         <scene sceneID="XNH-6y-8Qa">
             <objects>
-                <tableViewController storyboardIdentifier="Main" id="MWU-UV-bb3" customClass="mainViewController" customModule="Ticket_viewer" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="Main" id="MWU-UV-bb3" customClass="MainViewController" customModule="Ticket_viewer" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="OXo-wq-HIn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
