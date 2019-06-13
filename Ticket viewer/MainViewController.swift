@@ -11,26 +11,26 @@ import UIKit
 class MainViewController: UITableViewController {
   
   var segueIdentifier = "mainToDetail"
-  let client = ZendestClient(apiName: "nadyapostr@gmail.com", apiKey: "Ne4dvhBqAleizOpjSGkkYqSiuHbUz4hTRQAyEscj", url: URL(string: "https://nadyapost.zendesk.com/api/v2/tickets.json")!)
+//  let client = ZendestClient(apiName: "nadyapostr@gmail.com", apiKey: "Ne4dvhBqAleizOpjSGkkYqSiuHbUz4hTRQAyEscj", url: URL(string: "https://nadyapost.zendesk.com/api/v2/tickets.json")!, perPage: 25)
   var ticketsList: [Ticket] = []
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    print("Started view")
-    let success = { (_ tickets: [Ticket]) in
-      DispatchQueue.main.async {
-        self.ticketsList = tickets
-        self.tableView.reloadData()
-        print("tickets are ready \(self.client.tickets)")
-      }
-    }
-    
-    let failure = {(error) in print(error)}
-    
-    
-    client.fetchTickets(success: success, failure: failure)
-    
-    print("assigned tickets \(client.tickets)")
+//    print("Started view")
+//    let success = { (_ tickets: [Ticket]) in
+//      DispatchQueue.main.async {
+//        self.ticketsList = tickets
+//        self.tableView.reloadData()
+//        print("tickets are ready \(self.client.tickets)")
+//      }
+//    }
+//    
+//    let failure = {(error) in print(error)}
+//    
+//    
+//    client.fetchTickets(success: success, failure: failure)
+//    
+//    print("assigned tickets \(client.tickets)")
     
   }
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

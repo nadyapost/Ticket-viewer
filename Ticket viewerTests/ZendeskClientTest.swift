@@ -21,14 +21,17 @@ class ZendeskClientTest: XCTestCase {
   
   func testDownloadFirst25() {
     let client = ZendestClient(
-        apiName: "nadyapostr@gmail.com",
-        apiKey: "Ne4dvhBqAleizOpjSGkkYqSiuHbUz4hTRQAyEscj",
-        url: URL(string: "https://nadyapost.zendesk.com/api/v2/tickets.json")!
+      apiName: "nadyapostr@gmail.com",
+      apiKey: "Ne4dvhBqAleizOpjSGkkYqSiuHbUz4hTRQAyEscj",
+      host: "nadyapost.zendesk.com",
+      perPage: 25
     )
     
     let expectation = XCTestExpectation(description: "Download zendesk tickets")
-    let success = {(_ _: [Ticket]) in
+    
+    let success = {(_ tickets: [Ticket]) in
       XCTAssertNotNil(Data(), "No data was downloaded.")
+      XCTAssertEqual(tickets.count, 25)
       expectation.fulfill()
     }
     let failure = { (err) in print(err)}
@@ -38,6 +41,27 @@ class ZendeskClientTest: XCTestCase {
     wait(for: [expectation], timeout: 10.0)
   }
   
+  func testDownloadNext25() {
+    let client = ZendestClient(
+      apiName: "nadyapostr@gmail.com",
+      apiKey: "Ne4dvhBqAleizOpjSGkkYqSiuHbUz4hTRQAyEscj",
+      host: "nadyapost.zendesk.com",
+      perPage: 25
+    )
+    
+    let expectation = XCTestExpectation(description: "Download zendesk tickets")
+    
+    let success = {(_ tickets: [Ticket]) in
+      XCTAssertNotNil(Data(), "No data was downloaded.")
+      XCTAssertEqual(tickets.count, 25)
+      expectation.fulfill()
+    }
+    let failure = { (err) in print(err)}
+    
+    client.fetchTickets(success: success, failure: failure)
+    
+    wait(for: [expectation], timeout: 10.0)
+  }
   
   func testPerformanceExample() {
     // This is an example of a performance test case.

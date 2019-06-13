@@ -14,13 +14,30 @@ class ZendestClient {
   var tickets: [Ticket] = []
   let apiName: String
   let apiKey: String
-  let url: URL
+  let host: String
+  let perPage: Int
   
+  let previousPage: URL? = nil
+  let nextPage: URL? = nil
   
-  init(apiName: String, apiKey: String, url: URL) {
+  let path = "/api/v2/tickets.json"
+  
+  init(apiName: String, apiKey: String, host: String, perPage: Int) {
     self.apiName = apiName
     self.apiKey = apiKey
-    self.url = url
+    self.host = host
+    self.perPage = perPage
+  }
+  
+  func url() -> URL {
+    var component = URLComponents()
+    component.scheme = "https"
+    component.host = host
+    component.path = path
+    let pages = URLQueryItem(name: "per_page", value: String(perPage))
+    component.queryItems = [pages]
+    return component.url!
+    
   }
   
   func authHeader() -> String {
@@ -29,7 +46,7 @@ class ZendestClient {
   }
 
   func request() -> URLRequest{
-    var request = URLRequest(url: url)
+    var request = URLRequest(url: url())
     request.httpMethod = "GET"
     request.setValue("Basic \(authHeader())", forHTTPHeaderField: "Authorization")
     return request
