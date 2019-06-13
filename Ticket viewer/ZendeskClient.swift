@@ -35,14 +35,14 @@ class ZendestClient {
     return request
   }
   
-  func fetchTickets(success: @escaping () -> Void, failure: @escaping (String) -> Void) {
+  func fetchTickets(success: @escaping (_ tickets: [Ticket]) -> Void, failure: @escaping (String) -> Void) {
 
     print("start the thing")
     let dataTask = URLSession.shared.dataTask(with: self.request()) { (data, _, error) in
       do {
         let ticketResponse = try JSONDecoder().decode(TicketsResponse.self, from: data!)
         self.tickets = ticketResponse.tickets
-        success()
+        success(self.tickets)
       } catch {
         print ("There is an error resiving data")
         failure("Error Happened")

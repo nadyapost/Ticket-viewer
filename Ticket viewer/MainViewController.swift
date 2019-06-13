@@ -17,16 +17,24 @@ class MainViewController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     print("Started view")
+    let success = { (_ tickets: [Ticket]) in
+      DispatchQueue.main.async {
+        self.ticketsList = tickets
+        self.tableView.reloadData()
+        print("tickets are ready \(self.client.tickets)")
+      }
+    }
     
-    client.fetchTickets(success: {
-      () in self.tableView.reloadData()
-      print("tickets are ready \(self.client.tickets)")
-    }, failure: {(error) in print(error)})
+    let failure = {(error) in print(error)}
+    
+    
+    client.fetchTickets(success: success, failure: failure)
     
     print("assigned tickets \(client.tickets)")
-    ticketsList = client.tickets
+    
   }
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    print("count called")
     return ticketsList.count
   }
   
