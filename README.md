@@ -1,5 +1,6 @@
 # Ticket-viewer
-Welcome to my iPhone version for Zendesck ticket viewer application.
+Welcome to my iPhone version for Zendesck Ticket Viewer application.
+Zendesk is a customer service tool that allows the creation and management of support tickets.
 
 ### Xcode Version 10.2.1 and Swift 5 are used.
 ### Tested on iPhone XR simulator. 
