@@ -8,19 +8,14 @@
 
 import Foundation
 
-class Ticket: Codable {
+struct Ticket: Codable {
   var subject: String
   var description: String
-  
-  init(subject: String, description: String) {
-    self.subject = subject
-    self.description = description
-  }
 }
 
 struct TicketsResponse: Codable {
   let tickets: [Ticket]
-  init(tickets: [Ticket]) {
-    self.tickets = tickets
-  }
+  let page: String?
+  let next_page: String?
+  let previous_page: String?
 }
