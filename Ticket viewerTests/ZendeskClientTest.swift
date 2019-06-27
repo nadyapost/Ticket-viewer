@@ -19,28 +19,6 @@ class ZendeskClientTest: XCTestCase {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
   }
   
-  func testDownloadFirst25() {
-    let client = ZendestClient(
-      apiName: "nadyapostr@gmail.com",
-      apiKey: "Ne4dvhBqAleizOpjSGkkYqSiuHbUz4hTRQAyEscj",
-      host: "nadyapost.zendesk.com",
-      perPage: 25
-    )
-    
-    let expectation = XCTestExpectation(description: "Download zendesk tickets")
-    
-    let success = {(_ tickets: [Ticket]) in
-      XCTAssertNotNil(Data(), "No data was downloaded.")
-      XCTAssertEqual(tickets.count, 25)
-      expectation.fulfill()
-    }
-    let failure = { (err) in print(err)}
-
-    client.fetchTickets(success: success, failure: failure)
-    
-    wait(for: [expectation], timeout: 10.0)
-  }
-  
   func testDownloadNext25() {
     let client = ZendestClient(
       apiName: "nadyapostr@gmail.com",
@@ -54,11 +32,38 @@ class ZendeskClientTest: XCTestCase {
     let success = {(_ tickets: [Ticket]) in
       XCTAssertNotNil(Data(), "No data was downloaded.")
       XCTAssertEqual(tickets.count, 25)
+      XCTAssertEqual(client.nextPage, URL(string: "https://nadyapost.zendesk.com/api/v2/tickets.json?page=2&per_page=25"))
+      XCTAssertEqual(client.nextPage, URL(string: "https://nadyapost.zendesk.com/api/v2/tickets.json?page=2&per_page=25"))
       expectation.fulfill()
     }
     let failure = { (err) in print(err)}
     
-    client.fetchTickets(success: success, failure: failure)
+    client.next()
+    client.next(success: success, failure: failure)
+    
+    wait(for: [expectation], timeout: 10.0)
+  }
+  
+  func testDownloadPrev25() {
+    let client = ZendestClient(
+      apiName: "nadyapostr@gmail.com",
+      apiKey: "Ne4dvhBqAleizOpjSGkkYqSiuHbUz4hTRQAyEscj",
+      host: "nadyapost.zendesk.com",
+      perPage: 25
+    )
+    let expectation = XCTestExpectation(description: "Download zendesk tickets")
+    
+    let success = {(_ tickets: [Ticket]) in
+      XCTAssertNotNil(Data(), "No data was downloaded.")
+      XCTAssertEqual(client.nextPage, URL(string: "https://nadyapost.zendesk.com/api/v2/tickets.json?page=1&per_page=25"))
+      XCTAssertEqual(client.previousPage, URL(string: "https://nadyapost.zendesk.com/api/v2/tickets.json?page=2&per_page=25"))
+      expectation.fulfill()
+    }
+    let failure = { (err) in print(err)}
+
+    client.next()
+    client.next()
+    client.previous(success: success, failure: failure)
     
     wait(for: [expectation], timeout: 10.0)
   }
