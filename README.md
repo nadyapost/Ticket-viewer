@@ -12,5 +12,5 @@ returned
 * Tells the user something is wrong if there is a program error
 
 
-###### Xcode Version 10.2.1 and Swift 5 are used.
+###### Xcode Version 10.2.1 and Swift 5 used.
 ###### Tested on iPhone XR simulator. 
